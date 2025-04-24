@@ -57,12 +57,12 @@ body {
 
 /*header section*/
 .hero_area {
-  background-image: url(../images/hero-bg.jpg);
+  background-image: url(../images/Bg1.png);
   background-size: cover;
 }
 
 .sub_page .hero_area {
-  height: auto;
+  height: fit-content;
 }
 
 .sub_page .who_section.layout_padding {
@@ -70,11 +70,11 @@ body {
 }
 
 .hero_area.sub_pages {
-  height: auto;
+  height: fit-content;
 }
 
 .header_section {
-  background-color: #151618;
+  background-color: #030d22;
 }
 
 .header_section .container-fluid {
