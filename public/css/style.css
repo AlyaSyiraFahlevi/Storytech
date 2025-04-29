@@ -57,12 +57,12 @@ body {
 
 /*header section*/
 .hero_area {
-  background-image: url(../images/hero-bg.jpg);
+  /* background-image: url(../images/Bg1.png); */
   background-size: cover;
 }
 
 .sub_page .hero_area {
-  height: auto;
+  height: fit-content;
 }
 
 .sub_page .who_section.layout_padding {
@@ -70,11 +70,11 @@ body {
 }
 
 .hero_area.sub_pages {
-  height: auto;
+  height: fit-content;
 }
 
 .header_section {
-  background-color: #151618;
+  background-color: #030d22;
 }
 
 .header_section .container-fluid {
@@ -176,7 +176,7 @@ a:focus {
   bottom: 0;
   width: 45px;
   height: 45px;
-  background-color: #30ae69;
+  /* background-color: #30ae69; */
   z-index: 2;
 }
 
@@ -280,114 +280,112 @@ a:focus {
   border: 4px solid #ffffff;
 }
 
-.how_section .how_container {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  padding: 45px 60px;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
+/* Update background dan styling umum */
+.how_section {
+  background-color: #dddddd; /* Ganti latar belakang dengan abu-abu terang */
+  padding: 60px 0;
 }
 
-.how_section .how_container .box {
+.how_section .heading_container h2 {
+  font-size: 2.5rem;
   text-align: center;
-  margin: 10px;
-  min-width: 200px;
-  width: 325px;
+  color: #333;
+  margin-bottom: 40px;
 }
 
-.how_section .how_container .box .img-box {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  height: 200px;
-  background-color: #f6f5f7;
+/* Styling untuk setiap card */
+.how_section .box {
+  background-color: #fff;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+  text-align: center;
 }
 
-.how_section .how_container .box .img-box svg {
-  width: 75px;
-  height: auto;
+.how_section .box:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
 }
 
-.how_section .how_container .box .detail-box {
-  margin-top: 15px;
+/* Styling untuk gambar dalam card */
+.how_section .img-box {
+  height: 250px;
+  width: 100%;
+  overflow: hidden;
 }
 
-.how_section .how_container .box .detail-box h5 {
-  font-weight: bold;
-  position: relative;
+.how_section .img-box img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
 }
 
-.how_section .how_container .box .detail-box h5::before {
-  display: none;
-  content: "";
-  position: absolute;
-  bottom: -4px;
-  left: 50%;
-  width: 75px;
-  height: 2px;
-  background-color: #30ae69;
-  -webkit-transform: translateX(-50%);
-          transform: translateX(-50%);
+.how_section .box:hover .img-box img {
+  transform: scale(1.1); /* Efek zoom pada gambar saat hover */
 }
 
-.how_section .how_container .box .detail-box p {
-  color: #b8b8b8;
+/* Styling untuk detail box */
+.how_section .detail-box {
+  padding: 20px;
+  background-color: #fff;
+  color: #333;
 }
 
-.how_section .how_container .box:hover .img-box {
-  background-color: #30ae69;
+.how_section .detail-box h5 {
+  font-size: 1.6rem;
+  color: #333;
+  margin-bottom: 15px;
+  transition: color 0.3s ease;
 }
 
-.how_section .how_container .box:hover .img-box svg {
-  fill: #ffffff;
+.how_section .detail-box p {
+  font-size: 1rem;
+  color: #777;
+  margin-bottom: 20px;
 }
 
-.how_section .how_container .box:hover .detail-box {
-  margin-top: 15px;
+/* Hover effect untuk judul */
+.how_section .detail-box h5:hover {
+  color: #4a90e2; /* Mengubah warna teks menjadi biru */
 }
 
-.how_section .how_container .box:hover .detail-box h5::before {
-  display: block;
+/* SVG Icon style */
+.how_section .img-box svg {
+  width: 80px;
+  height: 80px;
+  fill: #333;
+  transition: fill 0.3s ease;
 }
 
-.how_section .how_container .box:hover .detail-box p {
-  color: #393a3c;
+.how_section .img-box svg:hover {
+  fill: #4a90e2; /* Warna berubah menjadi biru saat hover */
 }
 
-.how_section .btn-box {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+/* Styling untuk layout container */
+.how_section .how_container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 30px;
+  justify-content: center;
+  margin-top: 40px;
+  padding: 0 20px; /* << tambah padding kiri-kanan */
 }
 
-.how_section .btn-box a {
-  display: inline-block;
-  padding: 10px 45px;
-  background-color: #171717;
-  border: 1px solid #171717;
-  color: #ffffff;
-  border-radius: 5px;
-  -webkit-transition: -webkit-transform 0.3s;
-  transition: -webkit-transform 0.3s;
-  transition: transform 0.3s;
-  transition: transform 0.3s, -webkit-transform 0.3s;
-}
+/* Mobile Responsiveness */
+@media (min-width: 1200px) {
+  .how_section .how_container {
+      padding: 0 60px; /* layar besar, tambah lebih gede */
+  }
 
-.how_section .btn-box a:hover {
-  -webkit-transform: translateY(-3px);
-          transform: translateY(-3px);
-  -webkit-box-shadow: 0px 3px 4px 0 rgba(0, 0, 0, 0.2);
-          box-shadow: 0px 3px 4px 0 rgba(0, 0, 0, 0.2);
+  .how_section .detail-box h5 {
+      font-size: 1.4rem;
+  }
+
+  .how_section .detail-box p {
+      font-size: 0.9rem;
+  }
 }
 
 .about_section {
@@ -519,6 +517,8 @@ section.app_section .img-box img {
 
 .auto_section {
   text-align: center;
+  background: #f9f9f9; /* atau warna tema kamu */
+  padding: 80px 0;
 }
 
 .auto_section .box {
@@ -833,3 +833,346 @@ section.app_section .img-box img {
 
 /* end footer section*/
 /*# sourceMappingURL=style.css.map */
+
+/* style tambahan  */
+
+   /* General Reset */
+   * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  /* Sticky Header */
+  .header_section {
+    position: sticky;
+    top: 0;
+    z-index: 1030;
+    background: linear-gradient(135deg, #001f3f, #3b008f);
+    backdrop-filter: blur(8px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    transition: background 0.4s ease, box-shadow 0.4s ease;
+  }
+
+  /* Navbar container */
+  .custom_nav-container {
+    padding: 0.8rem 2rem;
+  }
+
+  /* Brand styling */
+  .navbar-brand {
+    font-family: 'Poppins', sans-serif;
+    font-size: 2rem;
+    font-weight: 700;
+    color: #00f7ff;
+    letter-spacing: 1px;
+    text-decoration: none;
+    transition: color 0.3s ease;
+  }
+
+  .navbar-brand:hover {
+    color: #7afcff;
+  }
+
+  /* Navbar toggler */
+  .navbar-toggler {
+    border: none;
+    outline: none;
+  }
+  .navbar-toggler-icon {
+    background-image: url('data:image/svg+xml;charset=utf8,%3Csvg viewBox="0 0 30 30" xmlns="http://www.w3.org/2000/svg"%3E%3Cpath stroke="rgba%287a, 252, 255, 1%29" stroke-width="2" d="M4 7h22M4 15h22M4 23h22"/%3E%3C/svg%3E');
+  }
+
+  /* Navbar links */
+  .navbar-nav {
+    display: flex;
+    gap: 1rem;
+  }
+
+  .navbar-nav .nav-link {
+    font-family: 'Poppins', sans-serif;
+    color: #ffffffcc;
+    font-size: 1rem;
+    font-weight: 500;
+    padding: 0.5rem 1rem;
+    text-decoration: none !important; /* Hapus garis bawah */
+    position: relative;
+    transition: color 0.3s ease, transform 0.3s ease;
+  }
+
+  .navbar-nav .nav-link:hover {
+    color: #00f7ff;
+    transform: translateY(-2px);
+  }
+
+  .navbar-nav .nav-item.active .nav-link {
+    color: #00f7ff;
+    font-weight: 600;
+  }
+
+  /* When scrolled */
+  .header_section.scrolled {
+    background: linear-gradient(135deg, #000d25, #2a005f);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+  }
+
+  /* Responsive fix */
+  @media (max-width: 991px) {
+    .custom_nav-container {
+      padding: 1rem;
+    }
+    .navbar-nav {
+      margin-top: 1rem;
+    }
+  }
+
+  .login-btn .btn {
+    background-color: #00f7ff;
+    color: #000;
+    border-radius: 30px;
+    padding: 8px 20px;
+    font-weight: 600;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+  }
+
+  .login-btn .btn:hover {
+    background-color: #00c8d6;
+    transform: translateY(-2px);
+    color: #fff;
+  }
+
+  .slider-background {
+    min-height: 100vh;
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: center;
+    position: relative;
+    background-blend-mode: overlay;
+    background-color: rgba(0, 10, 40, 0.6);
+  }
+
+  .detail-box h1 {
+    font-size: 3rem;
+    font-weight: 700;
+    color: #00f7ff;
+  }
+
+  .detail-box p {
+    font-size: 1.2rem;
+    color: #ccc;
+    max-width: 500px;
+  }
+
+  .btn-explore {
+    display: inline-block;
+    background-color: #00f7ff;
+    color: #000;
+    padding: 10px 25px;
+    border-radius: 30px;
+    font-weight: bold;
+    transition: 0.4s all ease;
+    text-decoration: none;
+  }
+
+  .btn-explore:hover {
+    background-color: #00c8d6;
+    color: #fff;
+    transform: translateY(-3px);
+    box-shadow: 0 4px 15px rgba(0, 247, 255, 0.5);
+  }
+
+  .img-box img {
+    max-width: 100%;
+    /* border-radius: 20px; */
+    box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+  }
+
+  .carousel-indicators li {
+    background-color: #00f7ff;
+    border-radius: 50%;
+    width: 12px;
+    height: 12px;
+  }
+  
+  .hubungi-section {
+    background: #f2f6fc;
+    padding: 100px 20px;
+  }
+  
+  .hubungi-cards {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px;
+    margin-top: 50px;
+  }
+  
+  .hubungi-card {
+    background: #ffffff;
+    border-radius: 16px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+    width: 250px;
+    text-align: center;
+    padding: 30px 20px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  .hubungi-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.12);
+  }
+  
+  .hubungi-icon {
+    font-size: 40px;
+    color: #3b82f6;
+    margin-bottom: 20px;
+  }
+  
+  .hubungi-card h4 {
+    font-size: 20px;
+    margin-bottom: 8px;
+    color: #1e293b;
+  }
+  
+  .hubungi-card p {
+    font-size: 16px;
+    color: #64748b;
+  }
+  
+  /* Responsive */
+  @media (max-width: 768px) {
+    .hubungi-cards {
+      flex-direction: column;
+      align-items: center;
+    }
+  }
+  
+  .tentang-section {
+    background: #f2f6fc;
+    padding: 100px 20px;
+  }
+  
+  .tentang-container {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  
+  .tentang-header {
+    text-align: center;
+    margin-bottom: 60px;
+  }
+  
+  .tentang-title {
+    font-size: 2.8rem;
+    font-weight: 800;
+    color: #0f172a;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+  }
+  
+  .tentang-underline {
+    height: 4px;
+    width: 60px;
+    background: #0ea5e9;
+    margin: 20px auto 0 auto;
+    border-radius: 2px;
+  }
+  
+  .tentang-content {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 50px;
+    justify-content: center;
+  }
+  
+  .tentang-image {
+    flex: 1 1 500px;
+    text-align: center;
+  }
+  
+  .tentang-image img {
+    width: 100%;
+    max-width: 500px;
+    border-radius: 20px;
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+    transition: transform 0.4s ease;
+  }
+  
+  .tentang-image img:hover {
+    transform: scale(1.05);
+  }
+  
+  .tentang-text {
+    flex: 1 1 500px;
+    font-size: 1.15rem;
+    color: #475569;
+    line-height: 1.8;
+  }
+  
+  .tentang-button {
+    display: inline-block;
+    margin-top: 25px;
+    padding: 14px 40px;
+    font-size: 1.1rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    color: #0ea5e9;
+    border: 2px solid #0ea5e9;
+    border-radius: 30px;
+    text-decoration: none;
+    transition: all 0.3s ease-in-out;
+  }
+  
+  .tentang-button:hover {
+    background: #0ea5e9;
+    color: #ffffff;
+  }
+  
+  /* Responsive */
+  @media (max-width: 768px) {
+    .tentang-content {
+      flex-direction: column;
+      text-align: center;
+    }
+  
+    .tentang-text {
+      padding-top: 20px;
+    }
+  }
+
+  .custom-footer {
+    background: #0f172a;
+    padding: 20px 5px;
+    text-align: center;
+    color: #94a3b8;
+    font-size: 16px;
+  }
+  
+  .footer-container {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  
+  .footer-text {
+    margin-bottom: 10px;
+    font-weight: 600;
+  }
+  
+  .footer-credit {
+    font-size: 14px;
+  }
+  
+  .footer-credit a {
+    color: #38bdf8;
+    text-decoration: none;
+    transition: color 0.3s ease;
+  }
+  
+  .footer-credit a:hover {
+    color: #0ea5e9;
+  }
+
+  
+  
