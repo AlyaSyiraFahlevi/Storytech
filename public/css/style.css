@@ -57,7 +57,11 @@ body {
 
 /*header section*/
 .hero_area {
+<<<<<<< HEAD
   /* background-image: url(../images/Bg1.png); */
+=======
+  background-image: url(../images/Bg1.png);
+>>>>>>> 501ddbc776e7ca432afabfdb0680046a56874a91
   background-size: cover;
 }
 
